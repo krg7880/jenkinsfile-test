@@ -1,10 +1,11 @@
 node {
     checkout scm
     stage ('Build') {
-      withCredentials([usernameColonPassword(credentialsId: 'github_user', variable: 'USERPASS')]) {
-      // withCredentials([string(credentialsId: 'my_secret_text', variable: 'MY_SECRET_TEXT')]) {
+      withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'test_user',
+                            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
             sh """
               cd '${WORKSPACE}'
+              export MY_SECRET_TEXT='${PASSWORD}'
               printenv
               docker build -t jenkins-test .
             """
