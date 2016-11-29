@@ -1,7 +1,8 @@
 node {
     checkout scm
     stage ('Build') {
-      withCredentials([string(credentialsId: 'my_secret_text', variable: 'MY_SECRET_TEXT')]) {
+      withCredentials([usernameColonPassword(credentialsId: 'github_user', variable: 'USERPASS')]) {
+      // withCredentials([string(credentialsId: 'my_secret_text', variable: 'MY_SECRET_TEXT')]) {
             sh """
               cd '${WORKSPACE}'
               ls -lart .
