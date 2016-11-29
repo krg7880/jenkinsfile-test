@@ -6,7 +6,7 @@ node {
               #printenv
               cd '${WORKSPACE}'
               ls -lart .
-              docker build -t jenkins-test .
+              MY_SECRET_TEXT=$MY_SECRET_TEXT docker build -t jenkins-test .
             """
       }
     }
