@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-echo "$1"
+# turn off console logging
+set +x
+
+docker build --build-arg MY_SECRET_TEXT=$1 -t jenkins-test .
