@@ -6,12 +6,12 @@ node {
             sh """
               set +x
               cd '${WORKSPACE}'
-              #MST='$MY_SECRET_TEXT'
-              #docker build --build-arg MY_SECRET_TEXT='$MST' -t jenkins-test .
-              ##MY_SECRET_TEXT='$MY_SECRET_TEXT' docker build -t jenkins-test .
-
+          
               sh ${WORKSPACE}/run.sh $MY_SECRET_TEXT
             """
       }
     }
 }
+
+// docker build --build-arg MY_SECRET_TEXT='$' -t jenkins-test .
+// MY_SECRET_TEXT='$MY_SECRET_TEXT' docker build -t jenkins-test .
