@@ -7,7 +7,7 @@ node {
               set +x
               cd '${WORKSPACE}'
           
-              sh ${WORKSPACE}/run.sh '$MY_SECRET_TEXT'
+              docker build --build-arg MY_SECRET_TEXT=\"$MY_SECRET_TEXT\" -t jenkins-test .
             """
       }
     }
