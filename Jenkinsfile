@@ -5,7 +5,6 @@ node {
                             usernameVariable: 'USERNAME', passwordVariable: 'MY_SECRET_TEXT']]) {
             sh """
               cd '${WORKSPACE}'
-              export MY_SECRET_TEXT='${PASSWORD}'
               printenv
               docker build -t jenkins-test .
             """
