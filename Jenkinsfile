@@ -4,7 +4,7 @@ node {
             sh """
               #printenv
               cd '${WORKSPACE}'
-              echo '${WORKSPACE}'
+              ls -lart .
               docker build -t jenkins-test .
             """
       }
