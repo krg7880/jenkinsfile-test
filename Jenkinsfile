@@ -7,7 +7,7 @@ node {
               set +x
               cd '${WORKSPACE}'
           
-              sh ${WORKSPACE}/run.sh $MY_SECRET_TEXT
+              sh ${WORKSPACE}/run.sh '$MY_SECRET_TEXT'
             """
       }
     }
