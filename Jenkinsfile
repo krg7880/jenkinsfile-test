@@ -5,7 +5,8 @@ node {
             sh """
               cd '${WORKSPACE}'
               ls -lart .
-              MY_SECRET_TEXT=$MY_SECRET_TEXT docker build -t jenkins-test .
+              export MY_SECRET_TEXT=$MY_SECRET_TEXT
+              docker build -t jenkins-test .
             """
       }
     }
