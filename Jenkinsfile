@@ -5,6 +5,7 @@ node {
               #printenv
               echo '${PWD}'
               echo '${WORKSPACE}'
+              cd '${WORKSPACE}'
               docker build -t jenkins-test .
             """
       }
