@@ -1,4 +1,5 @@
 node {
+    checkout scm
     stage ('Build') {
       withCredentials([string(credentialsId: 'my_secret_text', variable: 'MY_SECRET_TEXT')]) {
             sh """
@@ -8,7 +9,5 @@ node {
               docker build -t jenkins-test .
             """
       }
-
     }
-  
 }
